@@ -17,6 +17,7 @@ jobs:
         run: |
           echo "Running shell commands"
           pwd
+          ls-A
           ls -la
           echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
           echo "List files in src directory:"
