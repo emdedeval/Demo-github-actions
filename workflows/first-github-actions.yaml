@@ -1,0 +1,24 @@
+name: Run Shell Commands
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  execute-commands:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Execute shell commands
+        run: |
+          echo "Running shell commands"
+          pwd
+          ls -la
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "List files in src directory:"
+          ls -la src/
+          echo "Shell commands executed successfully"
